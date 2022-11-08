@@ -23,7 +23,7 @@ const updateData = async function(req,res){
     let data = req.body;
     let employee = await employeeSchema.findById(req.params.id);
     let changeData = await employeeSchema.updateOne({_id : employee._id},{$set : {firstName :data.firstName}},{new : true});
-    console.log(req.params.id,employee,changeData);
+    // console.log(req.params.id,employee,changeData);
     res.send(changeData);
 }
 

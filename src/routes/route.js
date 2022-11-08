@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const employeeRegister = require('../controller/employeeController')
+const employeeRegister = require('../controller/employeeController');
+const {authentication, authorization} = require('../middleware/auth')
 
 
 router.post("/super",employeeRegister.employeeRegister);
 
 router.post("/login", employeeRegister.login);
 
-router.put("/updateProfile/:id", employeeRegister.updateData);
+router.put("/updateProfile/:id",authentication,authorization, employeeRegister.updateData);
 
 router.get("/employees",employeeRegister.employees);
 
