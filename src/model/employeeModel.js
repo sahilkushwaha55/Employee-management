@@ -35,6 +35,6 @@ const employeeSchema = mongoose.Schema({
         type : "String",
         required : true
     }
-}, {timesStamps : true})
+}, {timestamps : true})
 
 module.exports = mongoose.model('employee',employeeSchema);

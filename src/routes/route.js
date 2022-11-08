@@ -4,7 +4,7 @@ const employeeRegister = require('../controller/employeeController');
 const {authentication, authorization} = require('../middleware/auth')
 
 
-router.post("/super",employeeRegister.employeeRegister);
+router.post("/register",employeeRegister.employeeRegister);
 
 router.post("/login", employeeRegister.login);
 
